@@ -13,15 +13,17 @@ export class Ads {
     public createdAt?: Date;
 
     constructor(props: Omit<Ads, 'id createdAt'>, id?: string, createdAt?: Date) {
-        this.gameId = props.gameId
-        this.name = props.name
-        this.yearsPlaying = props.yearsPlaying
-        this.discord = props.discord
-        this.weekDays = props.weekDays
-        this.hourStart = props.hourStart
-        this.hourEnd = props.hourEnd
-        this.useVoiceChannel = props.useVoiceChannel
 
+        this.gameId = props.gameId;
+        this.name = props.name;
+        this.yearsPlaying = props.yearsPlaying;
+        this.discord = props.discord;
+
+        this.hourStart = props.hourStart;
+        this.hourEnd = props.hourEnd;
+        this.useVoiceChannel = props.useVoiceChannel;
+
+        this.weekDays = props.weekDays;
         if (!createdAt) {
             this.createdAt = new Date();
         } else {

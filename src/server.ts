@@ -11,13 +11,14 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+const prisma = new PrismaClient({
+    log: ['query']
+});
+
 app.use(routes);
 app.listen(PORT);
-console.log(`Connect in port ${PORT}`)
-
-// const prisma = new PrismaClient({
-//     log: ['query']
-// });
+console.log(`Connect in port ${PORT}`);
 
 // app.get('/games', async (request, response) => {
 //     const games = await prisma.game.findMany({
@@ -35,6 +36,11 @@ console.log(`Connect in port ${PORT}`)
 // app.post('/games/:id/ads', async (request, response) => {
 //     const gameId = request.params.id;
 //     const body = request.body;
+
+//     console.log(body.weekDays.join(','))
+
+//     const teste = [1,2,3];
+//     teste.join(',')
 
 //     const ad = await prisma.ad.create({
 //         data: {
@@ -57,6 +63,7 @@ console.log(`Connect in port ${PORT}`)
 // })
 
 // app.get('/games/:id/ads', async (request, response) => {
+//     console.log('teste')
 //     const gameId = request.params.id;
 
 //     const ads = await prisma.ad.findMany({
@@ -88,18 +95,19 @@ console.log(`Connect in port ${PORT}`)
 //     }))
 // })
 
+
 // app.get('/ads/:id/discord', async (request, response) => {
-//     const adId = request.params.id;
-
-//     const ad = await prisma.ad.findUniqueOrThrow({
-//         select: {
-//             discord: true
-//         },
+    //     const adId = request.params.id;
+    
+    //     const ad = await prisma.ad.findUniqueOrThrow({
+        //         select: {
+            //             discord: true
+            //         },
 //         where: {
-//             id: adId
-//         }
-//     })
-//     return response.json(ad)
-// })
-
+    //             id: adId
+    //         }
+    //     })
+    //     return response.json(ad)
+    // })
+    
 
