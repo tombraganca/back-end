@@ -4,9 +4,7 @@ import { FindGameUseCase } from "./FindGameUseCase";
 export class FindGameController {
     constructor(
         private findGamesUserCase: FindGameUseCase
-    ) {
-
-    }
+    ) { }
 
     async handle(request: Request, response: Response) {
         const { id } = request.params;

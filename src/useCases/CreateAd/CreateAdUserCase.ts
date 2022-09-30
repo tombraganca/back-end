@@ -1,17 +1,14 @@
 import { Ads } from "../../entities/Ads";
-import { IAdsRepository } from "../../repositories/IAdsReposotory";
+import { IAdsRepository } from "../../repositories/IAdsRepository";
 import { convertHoursStringToMinutes } from "../../utils/convert-hour-string-to-minutes";
 import { ICreateAdDTO } from "./CreateAdDTO";
 
 export class CreateAdUserCase {
     constructor(
         private adRepository: IAdsRepository
-    ) {
-
-    }
+    ) { }
 
     async execute(data: ICreateAdDTO) {
-
         if (Array.isArray(data.weekDays)) {
             data.weekDays.join(',');
         } if (typeof data.hourStart === 'string') {

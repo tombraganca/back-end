@@ -13,7 +13,6 @@ export class FindGameUseCase {
         if (!game) {
             throw new Error("Game not find!");
         }
-
         return game;
     }
 

@@ -4,9 +4,7 @@ import { CreateGameUseCase } from "./CreateGameUseCase";
 export class CreateGameController {
     constructor(
         private createGamesUserCase: CreateGameUseCase
-    ) {
-
-    }
+    ) { }
 
     async handle(request: Request, response: Response) {
         const { title, bannerUrl } = request.body;

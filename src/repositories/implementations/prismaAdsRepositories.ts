@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { Ads } from "../../entities/Ads";
-import { IAdsRepository } from "../IAdsReposotory";
+import { IAdsRepository } from "../IAdsRepository";
 
 export class PrismaAdsRepositories implements IAdsRepository {
 

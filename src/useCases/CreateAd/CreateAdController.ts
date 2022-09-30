@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-import { Game } from "../../entities/Games";
 import { PrismaGamesRepository } from "../../repositories/implementations/prismaGamesRepositories";
-import { FindGameController } from "../FindGame/FindGameController";
 import { FindGameUseCase } from "../FindGame/FindGameUseCase";
 import { ICreateAdDTO } from "./CreateAdDTO";
 import { CreateAdUserCase } from "./CreateAdUserCase";
@@ -9,12 +7,9 @@ import { CreateAdUserCase } from "./CreateAdUserCase";
 export class CreateAdController {
     constructor(
         private createAdUseCase: CreateAdUserCase
-    ) {
-
-    }
+    ) { }
 
     async handle(request: Request, response: Response) {
-
         const data: ICreateAdDTO = request.body;
         const { id } = request.params;
         data.gameId = id;
@@ -39,7 +34,5 @@ export class CreateAdController {
                 message: err.message || 'unexpected error'
             });
         }
-
-
     }
 }
