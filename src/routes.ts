@@ -8,5 +8,6 @@ const routes = express()
 routes.get('/games/:id', (request, response) => { findUseController.handle(request, response) });
 routes.post('/games/:id/ads', (request, response) => { createAdController.handle(request, response) })
 routes.post('/games', (request, response) => { createGameController.handle(request, response) });
+routes.get('/ads/:id/discord')
 
 export { routes }
